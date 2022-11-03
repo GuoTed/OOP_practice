@@ -24,8 +24,12 @@ public:
     void getpurprice(){
         cout << "Purchase Price: " << purchase_price << endl;
     }
-    void getdes(){
+    // virtual function: use derived class fun if override
+    virtual void getdes(){
         cout << "Description: " << description << endl;
+    }
+    void getdate(){
+        cout << "buy in " << purchase_date << endl;
     }
 protected:
     void getprofit(){
@@ -70,15 +74,33 @@ public:
     void getcode(){
         cout << "Code: " << code << endl;
     }
+    // let user can use this fun to access protected fun in Item
     void getprofitbyDerived(){
-        getprofit();
+        Item::getprofit();
+    }
+    // override the getdes fun
+    void getdes(){
+        cout << "override version->Description: ";
+        Item::getdes();
+    }
+    // override the getprofit fun
+    void getprofit(){
+        cout << "override version-> ";
+        Item::getprofit();
+    }
+    // overload the getprofit fun (explain: same interface with different arugs)
+    void getprofit(bool showcode){
+        cout << "function overloading -> ";
+        Item::getprofit();
+        if(showcode)
+            cout << "profit is from " << code << endl;
     }
 private:
     string code;
 };
 
 // Multiple Inheritance
-// can be extend by using template (ex: ETF / Found / Bond)
+// tr to use template (ex: ETF / Found / Bond)
 class Strategies: public ETF, public Income{
 public:
     Strategies(int price, string date, string des="ETF", string code="VTI"): ETF(price, date, des){
@@ -102,6 +124,5 @@ private:
 };
 
 
-// Polymorphism
 
 
