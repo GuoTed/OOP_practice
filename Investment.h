@@ -78,7 +78,7 @@ public:
     void getprofitbyDerived(){
         Item::getprofit();
     }
-    // override the getdes fun
+    // override the getdes fun & use "virtual" in base fun
     void getdes(){
         cout << "override version->Description: ";
         Item::getdes();
@@ -123,6 +123,8 @@ private:
     int totalprofit;
 };
 
-
+// practice list
+// operator overloading 
+// tempelate
 
 

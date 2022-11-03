@@ -32,6 +32,6 @@ int main(){
     poly->setprice(100);
     poly->getdate();
     poly->getprofit(); // failed bc it will access base first and then seek if another implement in derived class
-    poly->getdes(); // remember to add virtual in base class if override
+    poly->getdes(); // remember to add virtual in base class if override & try to use polymorphism
 }
 
