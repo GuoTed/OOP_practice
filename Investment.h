@@ -125,6 +125,4 @@ private:
 
 // practice list
 // operator overloading 
-// tempelate
-
 
